@@ -1,0 +1,48 @@
+{
+  "name": "go-to-controller",
+  "displayName": "Go to Controller",
+  "description": "Navigate to ASP.NET Core controllers from Razor views",
+  "version": "0.0.2",
+  "publisher": "MostafaKhoramnia",
+   "icon": "./images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MostafaKhoramnia/go-to-controller"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:go-to-controller.goto"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "go-to-controller.goto",
+        "title": "Go to Controller"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "go-to-controller.goto",
+        "key": "ctrl+m ctrl+g",
+        "mac": "cmd+m cmd+g",
+        "when": "editorTextFocus && resourceExtname == .cshtml"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3"
+  }
+}
